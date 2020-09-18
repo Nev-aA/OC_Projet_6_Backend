@@ -90,7 +90,7 @@ exports.likeOrDislikeASauce = (req, res, next) => {
                     res.status(405).json({ error });
                     break;
             }
-            Sauce.updateOne({ sauce }, { ...req.body, _id: req.params.id })
+            sauce.updateOne({ likes: sauce.likes, dislikes: sauce.dislikes, usersLiked: sauce.usersLiked, usersDisliked: sauce.usersDisliked })
                 .then(() => res.status(200).json({ message: 'Likes / dislikes de la sauce mis à jour !' }))
                 .catch(error => res.status(400).json({ error }));
         })

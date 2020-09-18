@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,7 +8,7 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://Alexandre:uyfbEFkStEbyhic3@cluster0-learningmangod.ziky9.mongodb.net/sopekocko?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env.MONGO_KEY}@cluster0-learningmangod.ziky9.mongodb.net/sopekocko?retryWrites=true&w=majority`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
