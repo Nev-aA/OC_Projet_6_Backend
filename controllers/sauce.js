@@ -1,5 +1,5 @@
 const Sauce = require('../models/sauce');
-const fs = require('fs');
+const fs = require('fs'); // give access to functions allowing us to modify file system
 
 exports.createSauce = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce);

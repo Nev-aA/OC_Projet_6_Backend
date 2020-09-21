@@ -16,6 +16,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_KEY}@cluster0-learningmangod
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
+// CORS (Cross Origin Ressource Sharing), Allow our 2 origins to communicate
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
